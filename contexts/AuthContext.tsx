@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>('checking')
   const [loading, setLoading] = useState(true)
 
-  const { data, error, mutate } = useSWR(
+  const { data, error, mutate } = useSWR<{ user: User } | null>(
     '/auth/me',
     authApi.me,
     {
