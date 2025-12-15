@@ -37,35 +37,35 @@ export default function Profile() {
   return (
     <Layout>
       <div className="px-4 sm:px-6 lg:px-8 max-w-2xl">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Profile</h1>
+        <h1 className="mb-6 text-3xl font-bold tracking-tight text-slate-50">Profile</h1>
         
         <div className="card">
           {message && (
-            <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded mb-4">
+            <div className="mb-4 rounded-xl border border-emerald-500/30 bg-emerald-900/30 px-4 py-3 text-xs text-emerald-200">
               {message}
             </div>
           )}
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
+            <div className="mb-4 rounded-xl border border-red-500/30 bg-red-950/40 px-4 py-3 text-xs text-red-200">
               {error}
             </div>
           )}
           
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="mb-1 block text-xs font-medium text-slate-300">
                 Email
               </label>
               <input
                 type="email"
                 value={user.email}
                 disabled
-                className="input bg-gray-100 cursor-not-allowed"
+                className="input cursor-not-allowed bg-slate-900/40 text-slate-400"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="mb-1 block text-xs font-medium text-slate-300">
                 Name
               </label>
               <input
@@ -74,7 +74,7 @@ export default function Profile() {
                 className="input"
               />
               {errors.name && (
-                <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                <p className="mt-1 text-xs text-red-300">{errors.name.message}</p>
               )}
             </div>
             
