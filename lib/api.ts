@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+// Normalise base URL and always append /api/v1 on the client side
+const rawBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+const normalisedBase = rawBase.replace(/\/+$/, '')
+
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1',
+  baseURL: `${normalisedBase}/api/v1`,
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
